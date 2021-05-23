@@ -1,0 +1,67 @@
+\ProvidesPackage{document}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                                  Packages                                  %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+% Margin Setup according to University methodology:
+\RequirePackage[top=2.5cm,bottom=2.5cm,inner=3cm,outer=2.5cm]{geometry}
+\RequirePackage[T1]{fontenc}    % French compatibility
+\RequirePackage[utf8]{inputenc} % Sensible text encoding
+\RequirePackage[french]{babel}  % French document environment
+\RequirePackage{fancyhdr}       % Footer customisation
+\RequirePackage{booktabs}       % Elegant tables
+\RequirePackage{float}          % Accurate positionning of figures
+\usepackage{titlesec}           % Font sizes for sections/subsection
+\RequirePackage{amsmath}        % Mathematics environments
+\RequirePackage{amssymb}        % Mathematical symbols
+\RequirePackage{siunitx}        % SI Units
+\RequirePackage{setspace}       % Line spacing
+\RequirePackage{chngcntr}       % Change how to count equations/figures/tables
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                               Headers/Footers                              %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\renewcommand{\footrulewidth}{.5pt} % Line at the bottom
+\cfoot{\thepage}                    % Centered page number (footer)
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                                  Sections                                  %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+% Font size for section (16)
+\titleformat{\section}
+{\normalfont\fontsize{16}{19}\bfseries}{\thesection}{1em}{}
+% Font size for subsection (14)
+\titleformat{\subsection}
+{\normalfont\fontsize{14}{17}\bfseries}{\thesubsection}{1em}{}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                               Equations/Math                               %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+% Number equation with section number (ex: First equation in section 3 is 3.1)
+\numberwithin{equation}{section}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                                Line Spacing                                %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+% Set 1.5 linespacing for the document
+\onehalfspacing
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                               Figures/Tables                               %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+% Count figure within sections (just like equations)
+\counterwithin{figure}{section}
+% Count table within sections (just like equations)
+\counterwithin{table}{section}
+

@@ -1,0 +1,76 @@
+\ProvidesPackage{titlepage}[2020/05/21 v.01 Sherbrooke titlepage
+by Benjamin Chausse]
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                                Define Labels                               %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\newcommand*{\institution}[1]{\gdef\@institution{#1}}
+\newcommand*{\faculty}[1]{\gdef\@faculty{#1}}
+\newcommand*{\department}[1]{\gdef\@department{#1}}
+\newcommand*{\classnb}[1]{\gdef\@classnb{#1}}
+\renewcommand*{\description}[1]{\gdef\@description{#1}}
+\renewcommand*{\author}[1]{\gdef\@author{#1}}
+\newcommand*{\location}[1]{\gdef\@location{#1}}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                               Initial Values                               %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\newcommand*{\@institution}{Université de Sherbrooke}
+\newcommand*{\@faculty}{Faculté de génie}
+\newcommand*{\@department}{Département de génie mécanique}
+\newcommand*{\@classnb}{\ }
+\newcommand*{\@description}{\ }
+\renewcommand*{\@title}{Titre du document}
+\renewcommand*{\@author}{Benjamin CHAUSSE}
+\newcommand*{\@location}{Sherbrooke (Québec) Canada}
+\renewcommand*{\@date}{\the\month, \the\year}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                               Customisations                               %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\newcommand{\MONTH}{%
+  \ifcase\the\month
+  \or Janvier% 1
+  \or Février% 2
+  \or Mars% 3
+  \or Avril% 4
+  \or Mai% 5
+  \or Juin% 6
+  \or Juillet% 7
+  \or Août% 8
+  \or Septembre% 9
+  \or Octobre% 10
+  \or Novembre% 11
+  \or Décembre% 12
+  \fi}
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                                 Title Page                                 %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\renewcommand*{\maketitle}{
+  \begin{titlepage}
+  \centering
+  {\LARGE\MakeUppercase\@institution}\par
+  {\Large\@faculty}\par
+  {\@department}\par
+  \vfill
+  {\Huge\@title}
+  \vfill
+  {\Large\@classnb}
+  \ {\Large\@description}
+  \vfill
+  \ {\Large\@author}
+  \vfill
+  {\Large\@location}\par
+  \vspace{.5cm}
+  {\Large\MONTH\ \the\year}
+  \vspace{1cm}
+  \end{titlepage}
+}
+\endinput
