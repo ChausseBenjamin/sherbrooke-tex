@@ -1,0 +1,13 @@
+*.4tc
+*.xref
+*.tmp
+*.pyc
+*.pyo
+*.fls
+*.vrb
+*.fdb_latexmk
+*.bak
+*.swp
+*.aux
+*.log
+*.synctex
