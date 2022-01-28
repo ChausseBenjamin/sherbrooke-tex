@@ -1,0 +1,22 @@
+\ProvidesPackage{math}[
+Simple shortcuts I use when write math]
+
+% To write dx with an upright d and an italicized x, enter \d{x}.
+% The format is variable agnostic.
+\renewcommand*{\d}{\mathop{}\!\mathrm{d}}
+
+% Upright character for Euler's constant using \e .
+\newcommand*{\e}{\mathop{}\!\mathrm{e}}
+
+% Makes variable changes for calculus easily explicit in align mode.
+% cdv stands for "Changement de variable".
+% Here is an example where u=sin(x) and du=-cos(x):
+% \cdv{ u }{ \sin(x) }{ -\cos(x) }
+% It will print out the words "Changement de variable" and make sure
+% that equations such as u= and du= do not get numbered.
+\newcommand*{\cdv}[3]{\mathop{}\!
+  \mathrm{Changement\ de\ variable:}&\nonumber\\
+  \ #1   &= #2\nonumber \\
+  \d{#1} &= #3\nonumber
+}
+
