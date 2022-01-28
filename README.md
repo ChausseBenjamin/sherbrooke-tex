@@ -44,3 +44,7 @@ rédaction aux études supérieures de la faculté. Afin d'en rendre son accès
 facile, je l'ai inclus dans le repo (`Protocole_Redaction_ESup.pdf`). S.V.P.
 faites une PR si je m'avère à être dans le tort dans ce gabarit. PAS DE ISSUES!
 S'il y a un problème, ayez une solution avant de m'en parler.
+
+Au cours du temps, il y a des macros que je me suis faites que j'utilise
+souvent. J'ai donc inclu un dossier macros qui contient toutes sorte de macros
+que j'utilise dans ma rédaction de rapports.
