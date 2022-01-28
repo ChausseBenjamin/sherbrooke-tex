@@ -10,21 +10,37 @@ d'interlignes, etc...). Il importe aussi une multitudes de packages utiles en
 génie (par exemple: `siunitx` rend facile le formattage d'unités
 internationales).
 
-La branche `master` est encombrante à utiliser puisqu'elle contient de
-`README`, un exemple de pdf précompilé, ainsi que le pdf des réglementations au
-sujet des normes de formattage de documents en génie. De ce fait, je recommande
-d'utiliser la branche `template` pour initialiser vos projets:
+Comment utiliser ce gabarit:
+----------------------------
+
+La branche `master` est encombrante à utiliser puisqu'elle contient de `README`
+et d'autres fichiers qui n'ont pas besoin d'être copié dans un nouveau projet.
+De ce fait, je recommande d'utiliser la branche `template` pour initialiser vos
+projets. Elle ne contient que l'essentiel:
 
 ```
 git clone -b template https://git.chausse.xyz/sherbrooke-tex now-de-votre-projet
 ```
 
-Il peut aussi être utile de garder de repo hors ligne pour faciliter son
+Il peut aussi être utile de garder le repo hors ligne pour faciliter son
 utilisation comme gabarit. Ainsi, je recommande le prodédé suivant:
 
-```
-# Création du gabarit hors-ligne dans un dossier nommé gabarit:
-git clone https://git.chausse.xyz/sherbrooke-tex ~/gabarit
+```sh
+# Choisissez l'emplacement et le nom du dossier pour le gabarit ici:
+path="~/gabarit"
+
+# Création du gabarit hors-ligne dans le dossier choisi:
+git clone https://git.chausse.xyz/sherbrooke-tex $path
+
 # Copie du gabarit lors de la création d'un nouveau projet:
-git clone -b template ~/gabarit
+git clone -b template $path
 ```
+
+Autres informations utiles
+--------------------------
+
+Le gabarit est basé sur les information contenues dans le protocole de
+rédaction aux études supérieures de la faculté. Afin d'en rendre son accès
+facile, je l'ai inclus dans le repo (`Protocole_Redaction_ESup.pdf`). S.V.P.
+faites une PR si je m'avère à être dans le tort dans ce gabarit. PAS DE ISSUES!
+S'il y a un problème, ayez une solution avant de m'en parler.
