@@ -63,8 +63,10 @@
 %                               Figures/Tables                               %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-% Count figure within sections (just like equations)
+% Count within sections (third table of section 5 would be Table 5.3)
 \counterwithin{figure}{section}
-% Count table within sections (just like equations)
 \counterwithin{table}{section}
+% Separate section number from fig/table with a hyphen (5-3 instead of 5.3)
+\renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\thetable}{\thesection-\arabic{table}}
 
