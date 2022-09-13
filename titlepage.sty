@@ -2,6 +2,7 @@
 Sherbrooke Engineering Title Page by Benjamin Chausse
 ]
 \RequirePackage{setspace}
+\RequirePackage{tabularx}
 \RequirePackage[french]{babel}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -11,8 +12,10 @@ Sherbrooke Engineering Title Page by Benjamin Chausse
 \newcommand*{\faculty}[1]{\gdef\@faculty{#1}}
 \newcommand*{\department}[1]{\gdef\@department{#1}}
 \renewcommand*{\title}[1]{\gdef\@title{#1}}
-\newcommand*{\classnb}[1]{\gdef\@classnb{#1}}
 \newcommand*{\class}[1]{\gdef\@class{#1}}
+\newcommand*{\classnb}[1]{\gdef\@classnb{#1}}
+\newcommand*{\presentation}[1]{\gdef\@presentation{#1}}
+\newcommand*{\teacher}[1]{\gdef\@teacher{#1}}
 \renewcommand*{\author}[1]{\gdef\@author{#1}}
 \newcommand*{\location}[1]{\gdef\@location{#1}}
 
@@ -21,12 +24,14 @@ Sherbrooke Engineering Title Page by Benjamin Chausse
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 \newcommand*{\@institution}{Université de Sherbrooke}
 \newcommand*{\@faculty}{Faculté de génie}
-\newcommand*{\@department}{Département de génie en question}
+\newcommand*{\@department}{Département de génie électrique et de génie informatique}
 \renewcommand*{\@title}{Titre du document}
-\newcommand*{\@classnb}{EXE 222}
-\newcommand*{\@class}{Numéro et nom du cours}
-\renewcommand*{\@author}{Prénom NOM}
-\newcommand*{\@location}{Sherbrooke (Québec) Canada}
+\newcommand*{\@class}{Mathématiques des circuits logiques}
+\newcommand*{\@classnb}{GEN420}
+\newcommand*{\@presentation}{Présenté à}
+\newcommand*{\@teacher}{Prénom Nom}
+\renewcommand*{\@author}{Prénom Nom -- CIP}
+\newcommand*{\@location}{Sherbrooke}
 
 % Simple Macro
 \newcommand{\usp}{\unskip\strut\par}
@@ -36,20 +41,29 @@ Sherbrooke Engineering Title Page by Benjamin Chausse
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 \renewcommand*{\maketitle}{
 \begin{titlepage}
-  \centering\LARGE\setstretch{.7}
+  % \centering\LARGE\setstretch{.7}
+  \centering\normalsize
+
   {\MakeUppercase{\@institution}\usp}
   {\@faculty\usp}
-  {\@department\usp}
+  {\@department}
   \vfill
-  {\Huge\MakeUppercase{\@title}}
+
+  {\LARGE{\@title}}
   \vfill
-  {\@classnb\hspace{.420cm}\@class\usp}
+
+  {\@class\usp}
+  {\@classnb}
   \vfill
-  {\@author\usp}
+
+  {\@presentation\usp}
+  {\@teacher}
   \vfill
-  {\Large \@location\usp}
-  \vspace{.69cm}
-  {\Large\@date\par}
-  \vspace{.420cm}
+
+  {Présenté par\usp}
+  {\@author}
+  \vfill
+
+  {\large \@location\ -- \@date\usp}
 \end{titlepage}
 }
