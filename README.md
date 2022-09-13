@@ -13,7 +13,7 @@ internationales).
 Comment utiliser ce gabarit:
 ----------------------------
 
-La branche `master` est encombrante à utiliser puisqu'elle contient de `README`
+La branche `master` est encombrante à utiliser puisqu'elle contient le `README`
 et d'autres fichiers qui n'ont pas besoin d'être copié dans un nouveau projet.
 De ce fait, je recommande d'utiliser la branche `template` pour initialiser vos
 projets. Elle ne contient que l'essentiel:
