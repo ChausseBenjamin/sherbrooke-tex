@@ -39,8 +39,12 @@ git clone -b template $path
 Autres informations utiles
 --------------------------
 
-Le gabarit est basé sur les information contenues dans le protocole de
-rédaction aux études supérieures de la faculté. Afin d'en rendre son accès
-facile, je l'ai inclus dans le repo (`Protocole_Redaction_ESup.pdf`). S.V.P.
-faites une PR si je m'avère à être dans le tort dans ce gabarit. PAS DE ISSUES!
-S'il y a un problème, ayez une solution avant de m'en parler.
+Le gabarit est basé sur les information contenues dans le guide de rédaction
+technique en génie (fourni dans le cadre du projet d'équipe en S1). Afin d'en
+rendre son accès facile, je l'ai inclus dans le repo
+(`Guide-redaction-technique_version1-7.pdf`). Cette référence prime sur les
+autres. Toutefois, s'il s'avère qu'une information est manquante de ce guide,
+le Protocole de rédaction disponible sur l'intranet de la faculté est utilisé
+(`Protocole_Redaction_ESup.pdf`). S.V.P. faites une PR si je m'avère à être
+dans le tort dans ce gabarit. PAS DE ISSUES! S'il y a un problème, ayez une
+solution avant de m'en parler.
