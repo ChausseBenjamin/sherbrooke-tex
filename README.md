@@ -39,6 +39,12 @@ git clone -b template $path
 Autres informations utiles
 --------------------------
 
+Par défaut, afin de rendre le processus de compilation plus rapide, la commande
+`\nofile` est utilisée. Cela empêche LaTeX de créer des fichiers auxiliaires
+nécessaires pour générer des tables des matières, bibliographies, etc... Avant
+de soumettre votre document, il est important de commenter cette ligne et
+recompilier le document.
+
 Le gabarit est basé sur les information contenues dans le guide de rédaction
 technique en génie (fourni dans le cadre du projet d'équipe en S1). Afin d'en
 rendre son accès facile, je l'ai inclus dans le repo
