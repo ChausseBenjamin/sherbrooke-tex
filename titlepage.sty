@@ -1,5 +1,5 @@
 \ProvidesPackage{titlepage}[
-Sherbrooke Engineering Title Page by Benjamin Chausse
+Sherbrooke Engineering Title Page by Benjamin Chausse adapted by S. Gosselin
 ]
 \RequirePackage{setspace}
 \RequirePackage{tabularx}
@@ -56,13 +56,22 @@ Sherbrooke Engineering Title Page by Benjamin Chausse
   {\@classnb}
   \vfill
 
+  
+  {Présenté par:\usp}
+  %{\@author}
+  \begin{tabulary}{\textwidth}{L L}
+  \large\emph{Nom} & \large\emph{Id}\\
+  %
+  % Name & ID\\
+  %
+  \end{tabulary}
+  \vfill
+  
+  
   {\@presentation\usp}
   {\@teacher}
   \vfill
 
-  {Présenté par\usp}
-  {\@author}
-  \vfill
 
   {\large \@location\ -- \@date\usp}
 \end{titlepage}
