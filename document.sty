@@ -8,7 +8,7 @@
 % Margin Setup according to University methodology:
 \RequirePackage[top=2.5cm,bottom=2.5cm,inner=3cm,outer=2.5cm]{geometry}
 % IEEE references & bibliography
-\RequirePackage[style=ieee]{biblatex}
+% \RequirePackage[style=ieee]{biblatex}
 \RequirePackage[T1]{fontenc}    % French compatibility
 \RequirePackage[utf8]{inputenc} % Sensible text encoding
 \RequirePackage[french]{babel}  % French document environment
@@ -70,3 +70,69 @@
 \renewcommand{\thefigure}{\thesection-\arabic{figure}}
 \renewcommand{\thetable}{\thesection-\arabic{table}}
 
+
+
+
+
+
+
+
+
+\ProvidesPackage{docstyle}
+
+% French support packages
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage[frenchb]{babel}
+\addto\captionsfrench{\def\tablename{{Tableau}}}
+
+% Layout packages
+\usepackage{lmodern}
+\usepackage{lscape}
+\usepackage{rotating}
+\usepackage{fancyhdr}
+\usepackage{placeins}
+\usepackage{wrapfig}
+\usepackage[letterpaper, left=3cm,right=2cm,top=2.5cm,bottom=2.5cm, headheight=15pt]{geometry}
+\usepackage{hyperref}
+\hypersetup{colorlinks, allcolors=black}
+
+% References
+\usepackage{csquotes}
+\usepackage[style=alphabetic,backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+% Sciences and Math packages
+%\usepackage{semtrans}
+%\usepackage{array}
+%\usepackage{textgreek}
+%\usepackage[ruled,vlined]{algorithm2e}
+%\SetAlgorithmName{Algorithme}{Algorithme}{Table des algorithmes}
+%\usepackage{amsmath}
+%\usepackage{fixltx2e}
+
+% Caption
+\usepackage{capt-of}
+
+% For dotted table of content
+\makeatletter
+\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
+\renewcommand*\l@subsection{\@dottedtocline{2}{2.3em}{3.2 em}}
+\makeatother
+
+%more control over table layouts
+\usepackage{tabulary}
+\newcolumntype{R}{>{\raggedleft\arraybackslash}X}
+\usepackage{float}
+\restylefloat{table}
+
+% Horizontal line and separator
+\newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
+\newcommand{\hseparator}{\hspace{0.3em}-\hspace{0.3em}}
+
+\newcommand{\doctitle}{}
+
+% Page layout
+\pagestyle{fancy}
+\lhead{\suni\hseparator\studyprogram}
+\rhead{\doctitle}
