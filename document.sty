@@ -1,5 +1,4 @@
-\ProvidesPackage{document}
-
+\ProvidesPackage{docstyle}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                                  Packages                                  %
@@ -20,6 +19,31 @@
 \RequirePackage{amssymb}        % Mathematical symbols
 \RequirePackage{siunitx}        % SI Units
 \RequirePackage{setspace}       % Line spacing
+\RequirePackage{xcolor}         % Addition of colors and color boxes
+\RequirePackage{graphicx}       % For the usage of multiple graphics
+\RequirePackage{subfig}
+\RequirePackage{pdfpages}       % Allow to add pdf docs to your latex file
+%\RequirePackage{subcaption}     % Adding subcaptions to subfigures
+\usepackage[export]{adjustbox}
+
+% Layout packages - from another template
+%\usepackage{lmodern}
+%\usepackage{lscape}
+%\usepackage{rotating}
+%\usepackage{fancyhdr}
+%\usepackage{placeins}
+%\usepackage{wrapfig}
+\usepackage{hyperref}
+\hypersetup{colorlinks, allcolors=black}
+
+% Sciences and Math packages
+%\usepackage{semtrans}
+%\usepackage{array}
+%\usepackage{textgreek}
+%\usepackage[ruled,vlined]{algorithm2e}
+%\SetAlgorithmName{Algorithme}{Algorithme}{Table des algorithmes}
+%\usepackage{fixltx2e}
+
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                               Headers/Footers                              %
@@ -35,10 +59,11 @@
 
 % Font size for section (16)
 \titleformat{\section}
-{\normalfont\fontsize{16}{19}\bfseries}{\thesection}{1em}{}
+{\normalfont\fontsize{21}{19}\bfseries}{\thesection}{1em}{}
 % Font size for subsection (14)
 \titleformat{\subsection}
 {\normalfont\fontsize{14}{17}\bfseries}{\thesubsection}{1em}{}
+
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -50,13 +75,13 @@
 % Use french commas when writing numbers
 \sisetup{locale=FR}
 
-
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                                Line Spacing                                %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 % Set 1.5 linespacing for the document
 \onehalfspacing
+
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -66,53 +91,12 @@
 % Count within sections (third table of section 5 would be Table 5.3)
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
+
 % Separate section number from fig/table with a hyphen (5-3 instead of 5.3)
 \renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\frenchtablename}{Tableau}
 \renewcommand{\thetable}{\thesection-\arabic{table}}
 
-
-
-
-
-
-
-
-
-\ProvidesPackage{docstyle}
-
-% French support packages
-\usepackage[utf8]{inputenc}
-\usepackage[T1]{fontenc}
-\usepackage[frenchb]{babel}
-\addto\captionsfrench{\def\tablename{{Tableau}}}
-
-% Layout packages
-\usepackage{lmodern}
-\usepackage{lscape}
-\usepackage{rotating}
-\usepackage{fancyhdr}
-\usepackage{placeins}
-\usepackage{wrapfig}
-\usepackage[letterpaper, left=3cm,right=2cm,top=2.5cm,bottom=2.5cm, headheight=15pt]{geometry}
-\usepackage{hyperref}
-\hypersetup{colorlinks, allcolors=black}
-
-% References
-\usepackage{csquotes}
-\usepackage[style=alphabetic,backend=biber]{biblatex}
-\addbibresource{references.bib}
-
-% Sciences and Math packages
-%\usepackage{semtrans}
-%\usepackage{array}
-%\usepackage{textgreek}
-%\usepackage[ruled,vlined]{algorithm2e}
-%\SetAlgorithmName{Algorithme}{Algorithme}{Table des algorithmes}
-%\usepackage{amsmath}
-%\usepackage{fixltx2e}
-
-% Caption
-\usepackage{capt-of}
 
 % For dotted table of content
 \makeatletter
@@ -120,11 +104,11 @@
 \renewcommand*\l@subsection{\@dottedtocline{2}{2.3em}{3.2 em}}
 \makeatother
 
-%more control over table layouts
+% more control over table layouts
 \usepackage{tabulary}
+\usepackage{multirow}
 \newcolumntype{R}{>{\raggedleft\arraybackslash}X}
-\usepackage{float}
-\restylefloat{table}
+%\restylefloat{table}
 
 % Horizontal line and separator
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
@@ -132,7 +116,23 @@
 
 \newcommand{\doctitle}{}
 
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                                  Reference                                 %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\usepackage{csquotes}
+\usepackage[style=apa,backend=biber]{biblatex}
+\addbibresource{references.bib}
+
+
+% Caption
+\usepackage{capt-of}
+
+
 % Page layout
-\pagestyle{fancy}
+%\pagestyle{fancy}
 \lhead{\suni\hseparator\studyprogram}
 \rhead{\doctitle}
+
+\usepackage{hyperref}
