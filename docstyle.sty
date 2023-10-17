@@ -1,54 +1,50 @@
-\ProvidesPackage{docstyle}
+\ProvidesPackage{document}
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                                  Packages                                  %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-
 % Margin Setup according to University methodology:
-\RequirePackage[top=2.5cm,bottom=2.5cm,inner=3cm,outer=2.5cm]{geometry}
+\RequirePackage{tocloft}
+\RequirePackage[top=2.5cm,bottom=2.5cm,inner=2.5cm,outer=2.5cm]{geometry}
+
+\usepackage{hyperref}               % Make insternal links in pdf document
+\hypersetup{colorlinks, allcolors=black}
+
+% \RequirePackage[utf8]{inputenc}     % Sensible text encoding (Not always required)
+\RequirePackage[french]{babel}      % French document environment
+\RequirePackage{fancyhdr}           % Footer customisation
+\RequirePackage{setspace}           % Line spacing
+\usepackage{titlesec}               % Font sizes for sections/subsection
+\RequirePackage{titletoc}           % Should help force the capitalization of ToC
+
+\RequirePackage{amsmath}            % Mathematics environments
+\RequirePackage{amssymb}            % Mathematical symbols
+\RequirePackage{siunitx}            % SI Units
+
+\RequirePackage{graphicx}           % For the usage of multiple graphics
+\RequirePackage{float}              % Accurate positionning of figures
+    % \RequirePackage{subcaption}       % Adding subcaptions to subfigures
+
+\RequirePackage{booktabs}           % Elegant tables
+\RequirePackage[export]{adjustbox}  % Helps with bigger table
+
+\RequirePackage{pdfpages}           % Allow to add pdf docs to your latex file
+
+\RequirePackage{xcolor}             % Addition of colors and color boxes
+
+\RequirePackage{lipsum}             % For tests purposes
+
+
+
 % IEEE references & bibliography
 % \RequirePackage[style=ieee]{biblatex}
 \RequirePackage[T1]{fontenc}    % French compatibility
-\RequirePackage[utf8]{inputenc} % Sensible text encoding
-\RequirePackage[french]{babel}  % French document environment
-\RequirePackage{fancyhdr}       % Footer customisation
-\RequirePackage{booktabs}       % Elegant tables
-\RequirePackage{float}          % Accurate positionning of figures
-\usepackage{titlesec}           % Font sizes for sections/subsection
-\RequirePackage{amsmath}        % Mathematics environments
-\RequirePackage{amssymb}        % Mathematical symbols
-\RequirePackage{siunitx}        % SI Units
-\RequirePackage{setspace}       % Line spacing
-\RequirePackage{xcolor}         % Addition of colors and color boxes
-\RequirePackage{graphicx}       % For the usage of multiple graphics
-\RequirePackage{subfig}
-\RequirePackage{pdfpages}       % Allow to add pdf docs to your latex file
-%\RequirePackage{subcaption}     % Adding subcaptions to subfigures
-\usepackage[export]{adjustbox}
-
-% Layout packages - from another template
-%\usepackage{lmodern}
-%\usepackage{lscape}
-%\usepackage{rotating}
-%\usepackage{fancyhdr}
-%\usepackage{placeins}
-%\usepackage{wrapfig}
-\usepackage{hyperref}
-\hypersetup{colorlinks, allcolors=black}
-
-% Sciences and Math packages
-%\usepackage{semtrans}
-%\usepackage{array}
-%\usepackage{textgreek}
-%\usepackage[ruled,vlined]{algorithm2e}
-%\SetAlgorithmName{Algorithme}{Algorithme}{Table des algorithmes}
-%\usepackage{fixltx2e}
+% \usepackage{fontspec}           % Allow the Time New Roman font
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                               Headers/Footers                              %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
-
 \renewcommand{\footrulewidth}{.5pt} % Line at the bottom
 \cfoot{\thepage}                    % Centered page number (footer)
 
@@ -56,14 +52,21 @@
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                                  Sections                                  %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+% Font size for section (12)
+% Normal formating. Feel free to uncomment according to your needs...
+% \titleformat{\section}
+% {\normalfont\fontsize{12}{18}\bfseries}{\thesubsection}{1em}{}
 
-% Font size for section (16)
+% Font size for section (12)
+% Fromating of sections according to Pr. Jean-Marc Drouet's requirment
 \titleformat{\section}
-{\normalfont\fontsize{21}{19}\bfseries}{\thesection}{1em}{}
-% Font size for subsection (14)
+{\normalfont\fontsize{12}{18}}{\bfseries\thesubsection}{0.5em}{\bfseries\MakeUppercase}
+% Font size for subsection (12)
 \titleformat{\subsection}
-{\normalfont\fontsize{14}{17}\bfseries}{\thesubsection}{1em}{}
-
+{\normalfont\fontsize{12}{16}}{\bfseries\thesubsection}{0.5em}{\bfseries}
+% Font size for subsubsection (12)
+\titleformat{\subsubsection}
+{\normalfont\fontsize{12}{14}}{\itshape\thesubsubsection}{0.5em}{\itshape}
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -83,7 +86,6 @@
 \onehalfspacing
 
 
-
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 %                               Figures/Tables                               %
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -92,17 +94,10 @@
 \counterwithin{figure}{section}
 \counterwithin{table}{section}
 
-% Separate section number from fig/table with a hyphen (5-3 instead of 5.3)
-\renewcommand{\thefigure}{\thesection-\arabic{figure}}
-\renewcommand{\frenchtablename}{Tableau}
+% Uncomment to separate section number from fig/table with a hyphen (5-3 instead of 5.3)
+% \renewcommand{\thefigure}{\thesection-\arabic{figure}}
+\renewcommand{\frenchtablename}{Toaster}        % TOASTER!!!!!
 \renewcommand{\thetable}{\thesection-\arabic{table}}
-
-
-% For dotted table of content
-\makeatletter
-\renewcommand*\l@section{\@dottedtocline{1}{1.5em}{2.3em}}
-\renewcommand*\l@subsection{\@dottedtocline{2}{2.3em}{3.2 em}}
-\makeatother
 
 % more control over table layouts
 \usepackage{tabulary}
@@ -112,9 +107,34 @@
 
 % Horizontal line and separator
 \newcommand{\HRule}{\rule{\linewidth}{0.5mm}}
-\newcommand{\hseparator}{\hspace{0.3em}-\hspace{0.3em}}
+\newcommand{\hseparator}{\hspace{0.3em}.\hspace{0.3em}}
 
-\newcommand{\doctitle}{}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                              Table of Content                              %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+% For dotted table of content
+\makeatletter
+\renewcommand\@dotsep{1}     % Dot separation
+\renewcommand*\l@section{\@dottedtocline{1}{0 em}{2 em}}
+\renewcommand*\l@subsection{\@dottedtocline{1}{0.7 em}{2 em}}
+\renewcommand*\l@subsubsection{\@dottedtocline{1}{1.4 em}{3 em}}
+\makeatother
+
+
+
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                       Useful Functions for Team Work                       %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+
+\newcommand{\todo}[1]{\colorbox{red}{\textbf{TODO}:}#1}
+\newcommand{\note}[1]{\colorbox{orange}{\textbf{NOTE}:}#1}
+\newcommand{\fixme}[1]{\colorbox{purple}{\textbf{FIXME}:}#1}
+
+\newcommand{\addref}{\colorbox{magenta}{add ref}}
+\newcommand{\addcite}{\colorbox{magenta}{add citation}}
 
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -135,4 +155,13 @@
 \lhead{\suni\hseparator\studyprogram}
 \rhead{\doctitle}
 
-\usepackage{hyperref}
+
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+%                                   Appendix                                 %
+%~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
+\RequirePackage[title,toc,titletoc,page]{appendix}
+
+\addto\captionsfrench{%
+  \renewcommand\appendixname{Annexe}
+  \renewcommand\appendixpagename{Annexe}
+}
